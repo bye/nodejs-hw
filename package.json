@@ -17,5 +17,11 @@
     "@babel/node": "^7.0.0-rc.1",
     "@babel/preset-env": "^7.0.0-rc.1",
     "nodemon": "^1.18.3"
+  },
+  "dependencies": {
+    "chokidar": "^2.0.4",
+    "csvjson": "^5.1.0",
+    "md5": "^2.2.1",
+    "path": "^0.12.7"
   }
 }
