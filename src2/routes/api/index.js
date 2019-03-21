@@ -1,10 +1,15 @@
 const { Router } = require('express');
 const apiRouter = Router();
+const pg = require('pg');
 import { products } from '../../models/products';
 import { users } from '../../models/users';
 import { checkToken } from '../../middlewares';
 
 apiRouter.get('/api/products', checkToken, function(req, res) {
+    const client = new pg.Client(process.env.DATABASE_URL);
+    client.connect((connectionError) => {
+        client.query('')
+    })
     res.json(products);
 });
 

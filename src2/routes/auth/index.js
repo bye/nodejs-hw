@@ -17,7 +17,7 @@ authRouter.post('', function(req, res) {
         res.status(403).send({ success: false,  message: 'Bad username/password combination.' });	
     } else {
         const payload = { "sub": user.id, "isActive": user.isActive };
-		const token = jwt.sign(payload, 'secret', { expiresIn: '1h' });
+		const token = jwt.sign(payload, 'secret', { expiresIn: '12h' });
 		res.send(token);
     }
 });
