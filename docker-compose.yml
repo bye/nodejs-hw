@@ -1,0 +1,23 @@
+version: "3"
+services:
+  web: 
+    build: .
+    command: npm start 
+    volumes:
+      - .:/src2
+      - /src2/node_modules
+    ports: 
+      - "3000:3000"
+    depends_on:
+      - db
+    environment: 
+      DATABASE_URL: postgres://me:postgres@db:5432/test-db
+  db: 
+    image: postgres:10
+    container_name: db
+    ports:
+      - "5431:5432"
+    environment: 
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: me
+      POSTGRES_DB: test-db
