@@ -1,9 +1,8 @@
 const { Router } = require('express');
 const authRouter = Router();
 const jwt = require('jsonwebtoken');
-const data = require('../../models/data');
+const data = require('../../models/users');
 import passport from '../../config/passport-setup';
-
 
 authRouter.post('', function(req, res) {
     const user = data.find((el) => {

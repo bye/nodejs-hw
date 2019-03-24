@@ -11,9 +11,7 @@ services:
     depends_on:
       - db
     environment: 
-      DATABASE_URL: postgres://me@postgres:5432/test-db
-    # environment: 
-    #   DB_HOST: db
+      DATABASE_URL: postgres://me:postgres@db:5432/test-db
   db: 
     image: postgres:10
     container_name: db
@@ -23,4 +21,3 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: me
       POSTGRES_DB: test-db
-    # command: ["./wait-for-it.sh", "db:5432", "--", "npm", "start"]
